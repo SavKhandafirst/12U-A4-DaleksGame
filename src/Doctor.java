@@ -5,6 +5,7 @@
 public class Doctor {
 
     private int row, col;
+    
 
     /**
      * Initializes the variables for a Doctor.
@@ -13,6 +14,15 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
+        // create the starting position of the doctor
+        
+        // get the random row
+        theRow = (int) Math.floor(Math.random() * 12);
+        
+        // get the random column
+        theCol = (int) Math.floor(Math.random() * 12);
+        
+        
 
     }
 
