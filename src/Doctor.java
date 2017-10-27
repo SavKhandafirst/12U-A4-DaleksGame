@@ -1,6 +1,7 @@
 
-/** This class models the Doctor in the game. A Doctor has
- *  a position and can move to a new position.
+/**
+ * This class models the Doctor in the game. A Doctor has a position and can
+ * move to a new position.
  */
 public class Doctor {
 
@@ -14,15 +15,8 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
-        // create the starting position of the doctor
-        
-        // get the random row
-        theRow = (int) Math.floor(Math.random() * 12);
-        
-        // get the random column
-        theCol = (int) Math.floor(Math.random() * 12);
-        
-        
+        this.row = theRow;
+        this.col = theCol;
 
     }
 
@@ -38,16 +32,60 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-
+        // doctor moves up and to the left
+        if(newRow == this.row - 1 && newCol == this.col - 1){
+            this.row = newRow;
+            this.col = newCol;
+        }
+        // doctor moves up
+        if(newRow == this.row - 1 && newCol == this.col){
+            this.row = newRow;
+            this.col = newCol;
+        }
+        // doctor moves up and to the right
+         if(newRow == this.row - 1 && newCol == this.col + 1){
+            this.row = newRow;
+            this.col = newCol;
+        }       
+        // doctor moves left
+        if(newRow == this.row && newCol == this.col - 1){
+            this.row = newRow;
+            this.col = newCol;
+        }       
+        // doctor moves right
+        if(newRow == this.row && newCol == this.col + 1){
+            this.row = newRow;
+            this.col = newCol;
+        }      
+        // doctor stays in the same spot
+        if(newRow == this.row && newCol == this.col){
+            this.row = newRow;
+            this.col = newCol;
+        }  
+        // doctor moves down and to the left
+        if(newRow == this.row + 1 && newCol == this.col - 1){
+            this.row = newRow;
+            this.col = newCol;
+        }     
+        // doctor moves down
+        if(newRow == this.row + 1 && newCol == this.col){
+            this.row = newRow;
+            this.col = newCol;
+        }            
+        // doctor moves down and to the right
+        if(newRow == this.row + 1 && newCol == this.col + 1){
+            this.row = newRow;
+            this.col = newCol;
+        }
     }
-
+    
     /**
      * Returns the row of this Doctor.
      *
      * @return This Doctor's row.
      */
     public int getRow() {
-
+        return this.row;
     }
 
     /**
@@ -56,7 +94,7 @@ public class Doctor {
      * @return This Doctor's column.
      */
     public int getCol() {
-
+        return this.col;
     }
 
 }

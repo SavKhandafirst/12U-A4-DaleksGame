@@ -14,6 +14,8 @@ public class Dalek {
      * @param theCol The column this Dalek starts at.
      */
     public Dalek(int theRow, int theCol) {
+        this.row = theRow;
+        this.col = theCol;
 
     }
 
@@ -35,7 +37,7 @@ public class Dalek {
      * @return This Dalek's row.
      */
     public int getRow() {
-
+        return this.row;
     }
 
     /**
@@ -44,7 +46,7 @@ public class Dalek {
      * @return This Dalek's column.
      */
     public int getCol() {
-
+        return this.col;
     }
 
     /**
@@ -60,6 +62,7 @@ public class Dalek {
      * @return true if this Dalek has crashed, false otherwise
      */
     public boolean hasCrashed() {
+        
 
     }
 
