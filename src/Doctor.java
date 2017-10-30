@@ -6,7 +6,6 @@
 public class Doctor {
 
     private int row, col;
-    
 
     /**
      * Initializes the variables for a Doctor.
@@ -17,7 +16,6 @@ public class Doctor {
     public Doctor(int theRow, int theCol) {
         this.row = theRow;
         this.col = theCol;
-
     }
 
     /**
@@ -33,52 +31,52 @@ public class Doctor {
      */
     public void move(int newRow, int newCol) {
         // doctor moves up and to the left
-        if(newRow == this.row - 1 && newCol == this.col - 1){
+        if (newRow == this.row - 1 && newCol == this.col - 1) {
             this.row = newRow;
             this.col = newCol;
-        }
-        // doctor moves up
-        if(newRow == this.row - 1 && newCol == this.col){
+        } // doctor moves up
+        else if (newRow == this.row - 1 && newCol == this.col) {
             this.row = newRow;
             this.col = newCol;
-        }
-        // doctor moves up and to the right
-         if(newRow == this.row - 1 && newCol == this.col + 1){
+        } // doctor moves up and to the right
+        else if (newRow == this.row - 1 && newCol == this.col + 1) {
             this.row = newRow;
             this.col = newCol;
-        }       
-        // doctor moves left
-        if(newRow == this.row && newCol == this.col - 1){
+        } // doctor moves left
+        else if (newRow == this.row && newCol == this.col - 1) {
             this.row = newRow;
             this.col = newCol;
-        }       
-        // doctor moves right
-        if(newRow == this.row && newCol == this.col + 1){
+        } // doctor moves right
+        else if (newRow == this.row && newCol == this.col + 1) {
             this.row = newRow;
             this.col = newCol;
-        }      
-        // doctor stays in the same spot
-        if(newRow == this.row && newCol == this.col){
+        } // doctor stays in the same spot
+        else if (newRow == this.row && newCol == this.col) {
             this.row = newRow;
             this.col = newCol;
-        }  
-        // doctor moves down and to the left
-        if(newRow == this.row + 1 && newCol == this.col - 1){
+        } // doctor moves down and to the left
+        else if (newRow == this.row + 1 && newCol == this.col - 1) {
             this.row = newRow;
             this.col = newCol;
-        }     
-        // doctor moves down
-        if(newRow == this.row + 1 && newCol == this.col){
+        } // doctor moves down
+        else if (newRow == this.row + 1 && newCol == this.col) {
             this.row = newRow;
             this.col = newCol;
-        }            
-        // doctor moves down and to the right
-        if(newRow == this.row + 1 && newCol == this.col + 1){
+        } // doctor moves down and to the right
+        else if (newRow == this.row + 1 && newCol == this.col + 1) {
             this.row = newRow;
             this.col = newCol;
+        } // if the doctor remains in the same positon
+        else if (newRow == this.row && newCol == this.col) {
+            this.row = newRow;
+            this.col = newCol;
+            // if the doctor teleports
+        } else {
+            this.row = (int) (Math.random() * 12);
+            this.col = (int) (Math.random() * 12);
         }
     }
-    
+
     /**
      * Returns the row of this Doctor.
      *

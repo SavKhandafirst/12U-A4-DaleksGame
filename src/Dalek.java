@@ -1,6 +1,7 @@
 
-/** This class models a Delek in the game. A Delek has
- *  a position and can advance towards the Doctor.
+/**
+ * This class models a Delek in the game. A Delek has a position and can advance
+ * towards the Doctor.
  */
 public class Dalek {
 
@@ -28,7 +29,44 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
+        // making sure that the daleks are always following the doctor based on the doctors current position
 
+        // if the doctor is above
+        if (doc.getRow() < this.row && doc.getCol() == this.col) {
+            this.row--;
+
+        } // if the doctor is below
+        else if (doc.getRow() > this.row && doc.getCol() == this.col) {
+            this.row++;
+
+        } // if the doctor is to the left
+        else if (doc.getRow() == this.row && doc.getCol() < this.col) {
+            this.col--;
+
+        } // if the doctor is to the right
+        else if (doc.getRow() == this.row && doc.getCol() > this.col) {
+            this.col++;
+
+        } // if the doctor is above and to the left
+        else if (doc.getRow() < this.row && doc.getCol() < this.col) {
+            this.row--;
+            this.col--;
+
+        } // if the doctor is above and to the right
+        else if (doc.getRow() < this.row && doc.getCol() > this.col) {
+            this.row--;
+            this.col++;
+
+        } // if the doctor is below and to the left
+        else if (doc.getRow() > this.row && doc.getCol() < this.col) {
+            this.row++;
+            this.col--;
+
+        } // if the doctor is below and to the right
+        else if (doc.getRow() > this.row && doc.getCol() > this.col) {
+            this.row++;
+            this.col++;
+        }
     }
 
     /**
@@ -53,6 +91,8 @@ public class Dalek {
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
+        // true when the dalek crashed
+        this.hasCrashed = true;
 
     }
 
@@ -62,7 +102,7 @@ public class Dalek {
      * @return true if this Dalek has crashed, false otherwise
      */
     public boolean hasCrashed() {
-        
+        return this.hasCrashed;
 
     }
 
