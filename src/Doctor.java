@@ -94,5 +94,4 @@ public class Doctor {
     public int getCol() {
         return this.col;
     }
-
 }

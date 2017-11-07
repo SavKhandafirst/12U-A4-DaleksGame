@@ -16,10 +16,10 @@ public class BoardClass {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Board b = new Board(12, 12);
+        //Board b = new Board(12, 12);
 
         // place peg
-        b.putPeg(Color.GREEN, 1, 1);
+        //b.putPeg(Color.GREEN, 1, 1);
 
 
 //        // remove a peg

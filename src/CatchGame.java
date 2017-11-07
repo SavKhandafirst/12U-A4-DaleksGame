@@ -15,24 +15,20 @@ public class CatchGame {
     // instance variables 
     // make the board
     Board board = new Board(12, 12);
-
     // make the doctor and set the spawn position randomly on board
     Doctor doctor = new Doctor((int) (Math.random() * 12), (int) (Math.random() * 12));
-
     // make Darek #1 and set the spawn position randomly on board
     Dalek dalekOne = new Dalek((int) (Math.random() * 12), (int) (Math.random() * 12));
-
     // make Darek #2 and set the spawn position randomly on board
     Dalek dalekTwo = new Dalek((int) (Math.random() * 12), (int) (Math.random() * 12));
-
     // make Darek #3 and set the spawn position randomly on board
     Dalek dalekThree = new Dalek((int) (Math.random() * 12), (int) (Math.random() * 12));
 
-//    // bug testing
-//    Doctor doctor = new Doctor(1, 5);
-//    Dalek dalekOne = new Dalek(3, 4);
-//    Dalek dalekTwo = new Dalek(1, 5);
-//    Dalek dalekThree = new Dalek(3, 6);
+    // bug testing
+//    Doctor doctor = new Doctor(3, 4);
+//    Dalek dalekOne = new Dalek(10, 4);
+//    Dalek dalekTwo = new Dalek(6, 4);
+//    Dalek dalekThree = new Dalek(6, 5);
     /**
      * The constructor for the game. Use it to initialize your game variables.
      * (create people, set positions, etc.)
@@ -66,11 +62,11 @@ public class CatchGame {
         if (doctor.getRow() == dalekOne.getRow() && doctor.getCol() == dalekOne.getCol()) {
             // get the dalek to crash
             dalekOne.crash();
-            // remove the black peg and replace with yellow peg for dalek
+            // remove the peg
             board.removePeg(dalekOne.getRow(), dalekOne.getCol());
-            board.putPeg(Color.YELLOW, dalekOne.getRow(), dalekOne.getCol());
-            // remove the green peg and replace with yellow peg for doctor
             board.removePeg(doctor.getRow(), doctor.getCol());
+            // add the yellow peg
+            board.putPeg(Color.YELLOW, dalekOne.getRow(), dalekOne.getCol());
             board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
             // tell the player they lost
             board.displayMessage("Oh too bad, better luck nexttime!");
@@ -82,11 +78,11 @@ public class CatchGame {
         if (doctor.getRow() == dalekTwo.getRow() && doctor.getCol() == dalekTwo.getCol()) {
             // get the dalek to crash
             dalekTwo.crash();
-            // remove the black peg and replace with yellow peg for dalek
+            // remove the peg
             board.removePeg(dalekTwo.getRow(), dalekTwo.getCol());
-            board.putPeg(Color.YELLOW, dalekTwo.getRow(), dalekTwo.getCol());
-            // remove the green peg and replace with yellow peg for doctor
             board.removePeg(doctor.getRow(), doctor.getCol());
+            // add the yellow peg
+            board.putPeg(Color.YELLOW, dalekTwo.getRow(), dalekTwo.getCol());
             board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
             // tell the player they lost
             board.displayMessage("Oh too bad, better luck nexttime!");
@@ -98,11 +94,11 @@ public class CatchGame {
         if (doctor.getRow() == dalekThree.getRow() && doctor.getCol() == dalekThree.getCol()) {
             // get the dalek to crash
             dalekThree.crash();
-            // remove the black peg and replace with yellow peg for dalek
+            // remove the peg
             board.removePeg(dalekThree.getRow(), dalekThree.getCol());
-            board.putPeg(Color.YELLOW, dalekThree.getRow(), dalekThree.getCol());
-            // remove the green peg and replace with yellow peg for doctor
             board.removePeg(doctor.getRow(), doctor.getCol());
+            // add the yellow peg
+            board.putPeg(Color.YELLOW, dalekThree.getRow(), dalekThree.getCol());
             board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
             // tell the player they lost
             board.displayMessage("Oh too bad, better luck nexttime!");
@@ -158,7 +154,7 @@ public class CatchGame {
             board.putPeg(Color.RED, dalekThree.getRow(), dalekThree.getCol());
         }
 
-        // while no one has won and if the doctor does not 
+        // while no one has won and if the doctor does not die
         while (true && sameSpawn == false) {
             // set the board so that clicks can be recieved
             Coordinate click = board.getClick();
@@ -257,11 +253,11 @@ public class CatchGame {
             if (doctor.getRow() == dalekOne.getRow() && doctor.getCol() == dalekOne.getCol()) {
                 // get the dalek to crash
                 dalekOne.crash();
-                // remove the black peg and replace with yellow peg for dalek
+                // remove the peg
                 board.removePeg(dalekOne.getRow(), dalekOne.getCol());
-                board.putPeg(Color.YELLOW, dalekOne.getRow(), dalekOne.getCol());
-                // remove the green peg and replace with yellow peg for doctor
                 board.removePeg(doctor.getRow(), doctor.getCol());
+                // add the yellow peg
+                board.putPeg(Color.YELLOW, dalekOne.getRow(), dalekOne.getCol());
                 board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
                 // tell the player they lost
                 board.displayMessage("Oh too bad, better luck nexttime!");
@@ -273,11 +269,11 @@ public class CatchGame {
             if (doctor.getRow() == dalekTwo.getRow() && doctor.getCol() == dalekTwo.getCol()) {
                 // get the dalek to crash
                 dalekTwo.crash();
-                // remove the black peg and replace with yellow peg for dalek
+                // remove the peg
                 board.removePeg(dalekTwo.getRow(), dalekTwo.getCol());
-                board.putPeg(Color.YELLOW, dalekTwo.getRow(), dalekTwo.getCol());
-                // remove the green peg and replace with yellow peg for doctor
                 board.removePeg(doctor.getRow(), doctor.getCol());
+                // add the yellow peg
+                board.putPeg(Color.YELLOW, dalekTwo.getRow(), dalekTwo.getCol());
                 board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
                 // tell the player they lost
                 board.displayMessage("Oh too bad, better luck nexttime!");
@@ -289,16 +285,31 @@ public class CatchGame {
             if (doctor.getRow() == dalekThree.getRow() && doctor.getCol() == dalekThree.getCol()) {
                 // get the dalek to crash
                 dalekThree.crash();
-                // remove the black peg and replace with yellow peg for dalek
+                // remove the peg
                 board.removePeg(dalekThree.getRow(), dalekThree.getCol());
-                board.putPeg(Color.YELLOW, dalekThree.getRow(), dalekThree.getCol());
-                // remove the green peg and replace with yellow peg for doctor
                 board.removePeg(doctor.getRow(), doctor.getCol());
+                // add the yellow peg
+                board.putPeg(Color.YELLOW, dalekThree.getRow(), dalekThree.getCol());
                 board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
                 // tell the player they lost
                 board.displayMessage("Oh too bad, better luck nexttime!");
                 // end game
                 break;
+            }
+
+            // if all three daleks crash
+            if (dalekOne.getRow() == dalekTwo.getRow() && dalekOne.getCol() == dalekTwo.getCol()
+                    && dalekOne.getRow() == dalekThree.getRow() && dalekOne.getCol() == dalekThree.getCol()
+                    && dalekTwo.getRow() == dalekThree.getRow() && dalekTwo.getCol() == dalekThree.getCol()) {
+                dalekOne.crash();
+                dalekTwo.crash();
+                dalekThree.crash();
+                board.removePeg(dalekOne.getRow(), dalekOne.getCol());
+                board.putPeg(Color.RED, dalekOne.getRow(), dalekOne.getCol());
+                board.removePeg(dalekTwo.getRow(), dalekTwo.getCol());
+                board.putPeg(Color.RED, dalekTwo.getRow(), dalekTwo.getCol());
+                board.removePeg(dalekThree.getRow(), dalekThree.getCol());
+                board.putPeg(Color.RED, dalekThree.getRow(), dalekThree.getCol());
             }
 
             // once all daleks are dead
@@ -312,5 +323,4 @@ public class CatchGame {
         }
 
     }
-
 }
